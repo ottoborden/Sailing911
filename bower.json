@@ -1,0 +1,36 @@
+{
+    "name": "Sailing911",
+    "version": "0.0.1",
+    "authors": [
+        "webmaster@test.sailing911.com"
+    ],
+    "description": "The best website dedicated to sailing",
+    "main": "app.js",
+    "moduleType": [
+        "node"
+    ],
+    "keywords": [
+        "sailing",
+        "directory",
+        "sailboats",
+        "sails"
+    ],
+    "license": "Copyright Sailing911",
+    "homepage": "http://sailing911.com",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "vendor",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular": "1.2.20",
+        "angular-route": "1.2.20",
+        "bootstrap": "3.2.0",
+        "lodash": "2.4.1",
+        "d3": "3.4.1"
+    }
+}
