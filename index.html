@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Sailing911">
+<head>
+    <meta charset="UTF-8">
+    <title>Sailing 911</title>
+
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/public/css/sitewide.css">
+</head>
+<body>
+<div class="container">
+
+    <navbar-directive ng-controller="navbarController"></navbar-directive>
+
+    <div class="col-lg-12 panel">
+
+        <!--
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div class="btn-group btn-group-sm">
+                    <button type="button" class="btn btn-default">A</button>
+                    <button type="button" class="btn btn-default">B</button>
+                    <button type="button" class="btn btn-default">C</button>
+                    <button type="button" class="btn btn-default">D</button>
+                    <button type="button" class="btn btn-default">E</button>
+                    <button type="button" class="btn btn-default">F</button>
+                    <button type="button" class="btn btn-default">G</button>
+                    <button type="button" class="btn btn-default">H</button>
+                    <button type="button" class="btn btn-default">I</button>
+                    <button type="button" class="btn btn-default">J</button>
+                    <button type="button" class="btn btn-default">K</button>
+                    <button type="button" class="btn btn-default">L</button>
+                    <button type="button" class="btn btn-default">M</button>
+                    <button type="button" class="btn btn-default">N</button>
+                    <button type="button" class="btn btn-default">O</button>
+                    <button type="button" class="btn btn-default">P</button>
+                    <button type="button" class="btn btn-default">Q</button>
+                    <button type="button" class="btn btn-default">R</button>
+                    <button type="button" class="btn btn-default">S</button>
+                    <button type="button" class="btn btn-default">T</button>
+                    <button type="button" class="btn btn-default">U</button>
+                    <button type="button" class="btn btn-default">V</button>
+                    <button type="button" class="btn btn-default">W</button>
+                    <button type="button" class="btn btn-default">X</button>
+                    <button type="button" class="btn btn-default">Y</button>
+                    <button type="button" class="btn btn-default">Z</button>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+        -->
+
+        <div class="col-md-12">
+            <div ng-view></div>
+        </div>
+        <!--<div class="col-md-3">
+            <sidebar-directive ng-controller="sidebarController"></sidebar-directive>
+        </div>-->
+
+    </div>
+
+</div>
+
+<!-- framework scripts -->
+<script src="vendor/angular/angular.min.js"></script>
+<script src="vendor/angular-route/angular-route.min.js"></script>
+<script src="vendor/jquery/dist/jquery.min.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vendor/lodash/dist/lodash.min.js"></script>
+
+<!-- app scripts -->
+<script src="app/app.js"></script>
+<script src="app/public/routes/routes.js"></script>
+
+<!-- navbar -->
+<script src="app/public/navbar/navbarModule.js"></script>
+<script src="app/public/navbar/navbarController.js"></script>
+<script src="app/public/navbar/navbarDirective.js"></script>
+
+<!-- sidebar
+<script src="app/public/sidebar/sidebarModule.js"></script>
+<script src="app/public/sidebar/sidebarController.js"></script>
+<script src="app/public/sidebar/sidebarDirective.js"></script> -->
+
+<!-- sidebar -->
+<script src="app/public/category/categoryModule.js"></script>
+<script src="app/public/category/categoryController.js"></script>
+<script src="app/public/category/categoryDirective.js"></script>
+
+<!-- home -->
+<script src="app/public/home/homeModule.js"></script>
+<script src="app/public/home/homeController.js"></script>
+<script src="app/public/home/homeDirective.js"></script>
+</body>
+</html>
