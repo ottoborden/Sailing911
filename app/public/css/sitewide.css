@@ -2,3 +2,8 @@ body {
     background: url("/Sailing911/app/public/img/sailing.jpg") fixed no-repeat;
     padding-top: 5px;
 }
+
+.angular-google-map-container {
+    height: 400px;
+    border: 1px solid black;
+}

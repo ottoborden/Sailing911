@@ -12,4 +12,11 @@ angular.module('category')
                 console.log('Error fetching categories from categoryController @ GET.php');
                 console.log(err);
             });
+            query = 'SELECT * FROM tblCategories WHERE id = ' + $scope.categoryId;
+            $http.get('app/private/REST/GET.php?q=' + query).success(function(data) {
+                $scope.categoryName = data[0].category;
+            })
+            .error(function(err) {
+                console.log('Error getting category name in categoryController');
+            });
 }]);

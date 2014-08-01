@@ -1,1 +1,51 @@
-company
+<div ng-if="company.noUrl === true">
+    <h1>{{company.company_name}} <small>{{company.city}}</small></h1>
+</div>
+<div ng-if="!company.noUrl">
+    <h1><a href="{{company.company_url}}" target="_blank">{{company.company_name}}</a> <small>{{company.city}}</small></h1>
+</div>
+
+
+<div class="col-md-6">
+    <table class="table table-bordered table-striped table-hover">
+        <tr>
+            <td>Street Address</td>
+            <td>{{company.street}}</td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>{{company.city}}</td>
+        </tr>
+        <tr>
+            <td>State</td>
+            <td>{{company.state}}</td>
+        </tr>
+        <tr>
+            <td>Zipcode</td>
+            <td>{{company.zip}}</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>{{company.phone}}</td>
+        </tr>
+        <tr>
+            <td>Region</td>
+            <td>{{company.region}}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{company.email}}</td>
+        </tr>
+        <tr>
+            <td>Fax</td>
+            <td>{{company.fax}}</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>{{company.description}}</td>
+        </tr>
+    </table>
+</div>
+<div class="col-md-6">
+    <h3>Map</h3>
+</div>

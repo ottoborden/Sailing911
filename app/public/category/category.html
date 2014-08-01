@@ -1,6 +1,6 @@
 <div class="col-md-12">
-    <h1>Companies <small>in category</small></h1>
+    <h1>Companies <small>in category <span class="text-uppercase text-info">{{categoryName}}</span></small></h1>
     <ul>
-        <li ng-repeat="company in categoryCompanies | orderBy: 'company_name'"><a href='company/{{company.id}}'>{{company.company_name}}</a></li>
+        <li ng-repeat="company in categoryCompanies | orderBy: 'company_name'"><a href='#/company/{{company.id}}'>{{company.company_name}}</a></li>
     </ul>
 </div>

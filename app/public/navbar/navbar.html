@@ -13,15 +13,15 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#/regions">Regions</a></li>
-                <!--<li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Regions<b class="caret"></b></a>
+                <li class="dropdown">
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown">Regions<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="/#regionGreat Lakes">Great Lakes</a></li><li><a href="/#regionGulf Coast">Gulf Coast</a></li><li><a href="/#regionMidwest">Midwest</a></li><li><a href="/#regionNortheast">Northeast</a></li><li><a href="/#regionNorthwest">Northwest</a></li><li><a href="/#regionSoutheast">Southeast</a></li><li><a href="/#regionSouthwest">Southwest</a></li>	          </ul>-->
+                    <li ng-repeat="reg in regions"><a href="#/regions/{{reg.id}}">{{reg.region}}</a></li>
+                  </ul>
                 <li class="dropdown">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li ng-repeat="cat in categories"><a href="">{{cat.category}}</a></li>
+                        <li ng-repeat="cat in categories"><a href="#/category/{{cat.id}}">{{cat.category}}</a></li>
                     </ul>
                 </li>
 
@@ -34,9 +34,9 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/wp">Articles</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Our Story</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="">Events</a></li>
+                <li><a href="">Our Story</a></li>
+                <li><a href="">Contact</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
