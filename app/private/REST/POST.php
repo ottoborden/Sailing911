@@ -7,7 +7,8 @@
         trigger_error('Database connection failed: ' . $conn->connect_error, E_USER_ERROR);
     }
 
-    $sql = $_POST['q'];
+    $post = json_decode($HTTP_RAW_POST_DATA);
+    $sql = $post->q;
     $rs = $conn->query($sql) or die($conn->error . __LINE__);
     $rtn = array();
     if (!$rs) {

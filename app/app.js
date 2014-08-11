@@ -25,8 +25,8 @@ angular.module('Sailing911').service('BrowseQueries', ['$http', '$q', function($
     return {
         getBrowseQueries: function(queries) {
             return $q.all([
-                $http.get('app/private/REST/GET.php?q=' + queries[0]),
-                $http.get('app/private/REST/GET.php?q=' + queries[1])
+                $http.get('app/private/REST/POST.php' + queries[0]),
+                $http.get('app/private/REST/POST.php' + queries[1])
             ])
         }
     }
