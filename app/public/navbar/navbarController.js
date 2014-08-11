@@ -1,7 +1,7 @@
 angular.module('navbar')
     .controller('navbarController', ['$scope', '$http', function($scope, $http) { 'use strict';
-        var query = 'SELECT * FROM tblCategories';
-        $http.get('app/private/REST/GET.php?q=' + query).success(function(data) {
+        var query = { 'q': 'SELECT * FROM tblCategories' };
+        $http.post('app/private/REST/POST.php', query).success(function(data) {
             $scope.categories = data;
         })
         .error(function(err) {
