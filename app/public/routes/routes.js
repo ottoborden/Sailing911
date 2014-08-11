@@ -1,8 +1,12 @@
-angular.module('Sailing911').config(['$routeProvider', function($routeProvider) { 'use strict';
+angular.module('Sailing911').config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) { 'use strict';
     $routeProvider
         .when('/', {
             templateUrl: 'app/public/home/home.html',
             controller: 'homeController'
+        })
+        .when('/browse', {
+            templateUrl: 'app/public/browse/browse.html',
+            controller: 'browseController'
         })
         .when('/category/:categoryId', {
             templateUrl: 'app/public/category/category.html',
@@ -23,4 +27,6 @@ angular.module('Sailing911').config(['$routeProvider', function($routeProvider) 
         .otherwise({
             redirectTo: '/'
         });
+
+    //$locationProvider.html5Mode(true);
 }]);

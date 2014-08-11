@@ -1,1 +1,8 @@
-<h1>Choose a category</h1>
+<div region-directive>
+    <h1>Regions</h1>
+    <table class="table table-bordered table-hover table-striped">
+        <tr ng-repeat="region in regions">
+            <td><a href="/category/{{region.id}}">{{region.region}}</a></td>
+        </tr>
+    </table>
+</div>
