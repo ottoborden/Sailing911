@@ -1,20 +1,19 @@
 angular.module('navbar')
-    .controller('navbarController', ['$scope', '$http', function($scope, $http) { 'use strict';
+    .controller('navbarController', ['$scope', '$http', 'RestService', function($scope, $http, RestService) { 'use strict';
         var query = {'q': 'SELECT * FROM tblCategories'};
-        $http.post('app/private/REST/POST.php', query).success(function(data) {
-            $scope.categories = data;
-            console.log(data);
-        })
-        .error(function(err) {
-            console.log('Error fetching categories from navbarController @ GET.php');
-            console.log(err);
+        RestService.fetch(query).then(function(res) {
+            if(res.data) {
+                $scope.categories = res.data;
+            } else {
+                console.log('Failed to get categories in navbarController');
+            }
         });
-        query = 'SELECT * FROM tblRegions';
-        $http.get('app/private/REST/GET.php?q=' + query).success(function(data) {
-            $scope.regions = data;
-        })
-        .error(function(err) {
-            console.log('Error fetching regions from navbarController @ GET.php');
-            console.log(err);
+        query = {'q': 'SELECT * FROM tblRegions'};
+        RestService.fetch(query).then(function(res) {
+            if(res.data) {
+                $scope.regions = res.data;
+            } else {
+                console.log('Failed to get regions in navbarController');
+            }
         });
 }]);
