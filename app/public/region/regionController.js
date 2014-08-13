@@ -1,12 +1,12 @@
 angular.module('region')
-    .controller('regionController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) { 'use strict';
+    .controller('regionController', ['$scope', '$http', '$routeParams', 'RestService', function($scope, $http, $routeParams, RestService) { 'use strict';
         $scope.regionId = $routeParams.regionId;
-        var query = 'SELECT * FROM tblRegions';
-        $http.get('app/private/REST/GET.php?q=' + query).success(function(data) {
-            $scope.regions = data;
-        })
-        .error(function(err) {
-            console.log('Error fetching categories from regionController @ GET.php');
-            console.log(err);
+        var query = {'q': 'SELECT * FROM tblRegions WHERE id=' + $routeParams.regionId};
+        RestService.fetch(query).then(function(res) {
+            $scope.region = res.data[0];
+            query = {'q': 'SELECT * FROM tblCompanies WHERE region=\'' + $scope.region.region + '\''};
+            RestService.fetch(query).then(function(res) {
+                $scope.companies = res.data;
+            });
         });
 }]);
