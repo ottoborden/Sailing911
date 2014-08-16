@@ -7,11 +7,16 @@ angular.module('Sailing911')
             return $http.post(RestService.postUrl, query);
         };
 
+        RestService.getMapData = function(path) {
+            return $http.get(path);
+        }
+
         RestService.getBrowseQueries = function(queries) {
-            return $q.all([
-                $http.post(RestService.postUrl, queries[0]),
-                $http.post(RestService.postUrl, queries[1])
-            ]);
+            var qs = [];
+            _.forEach(queries, function(item) {
+                qs.push($http.post(RestService.postUrl, item));
+            });
+            return $q.all(qs);
         };
 
         return RestService;

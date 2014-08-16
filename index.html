@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="Sailing911">
-<head>
     <meta charset="UTF-8">
-    <title>Sailing 911</title>
+    <title>New Layout Preview</title>
 
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/jqvmap/jqvmap/jqvmap.css">
+
     <link rel="stylesheet" href="app/public/css/sitewide.css">
+
+    <style>
+        .categories {
+            background-color: red;
+        }
+        .content {
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-
-    <navbar-directive ng-controller="navbarController"></navbar-directive>
-
-    <div class="col-lg-12 panel">
-        <div class="col-md-12">
-            <div ng-view></div>
+<div class="container-fluid">
+    <div class="col-sm-3 left">
+        <div class="row">
+            <div map-directive></div>
+        </div>
+        <div class="row categories">
+            Categories
         </div>
     </div>
 
-    <div class="row">
-        <div class="container-fluid">
-            <div class="well">
-                <p>Copyright <i class="glyphicon glyphicon-copyright-mark"></i> Sailing911 2014</p>
-            </div>
+    <div class="col-sm-9 content">
+        <div class="row">
+            <navbar-directive></navbar-directive>
+        </div>
+
+        <div class="row">
+            <div ng-view></div>
         </div>
     </div>
 </div>
@@ -31,10 +43,13 @@
 <!-- framework scripts -->
 <script src="vendor/angular/angular.min.js"></script>
 <script src="vendor/angular-route/angular-route.min.js"></script>
+<script src="vendor/checklist-model/checklist-model.js"></script>
 <script src="vendor/jquery/dist/jquery.min.js"></script>
 <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="vendor/d3/d3.min.js"></script>
 <script src="vendor/lodash/dist/lodash.min.js"></script>
+<script src="vendor/jqvmap/jqvmap/jquery.vmap.min.js"></script>
+<script src="vendor/jqvmap/jqvmap/maps/jquery.vmap.usa.js"></script>
 
 <!-- app scripts -->
 <script src="app/app.js"></script>

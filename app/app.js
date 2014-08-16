@@ -8,8 +8,7 @@ angular.module('Sailing911', [
     'region',
     'company',
     'map',
-    'browse',
-    'preview'
+    'browse'
 ]);
 
 angular.module('lodash', []).factory('lodashService', [function() {

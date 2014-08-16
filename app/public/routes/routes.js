@@ -20,10 +20,14 @@ angular.module('Sailing911').config(['$routeProvider', '$locationProvider', func
             templateUrl: 'app/public/region/region.html',
             controller: 'regionController'
         })
-        .when('/map', {
+        .when('/story', {
+            templateUrl: 'app/public/story/story.html'
+            //controller: 'storyController'
+        })
+        /*.when('/map', {
             templateUrl: 'app/public/map/map.html',
             controller: 'mapController'
-        })
+        })*/
         .otherwise({
             redirectTo: '/'
         });

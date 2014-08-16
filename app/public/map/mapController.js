@@ -1,9 +1,11 @@
 angular.module('map')
-    .controller('mapController', ['$scope', '$http', function($scope, $http) {
-        $http.get('app/public/map/map.svg').success(function(data) {
-            $scope.svgData = data;
-        })
-        .error(function(err) {
-            console.log('Error getting map.svg in mapController');
+    .controller('mapController', ['$scope', '$http', 'RestService', function($scope, $http, RestService) {
+        RestService.getMapData('vendor/jqvmap/jqvmap/data/jquery.vmap.sampledata.js').then(function(res) {
+            if(res.statusText !== 'OK') {
+                console.log('Failed to get map data');
+            }
+            else {
+                $scope.mapData = res.data;
+            }
         });
 }]);
