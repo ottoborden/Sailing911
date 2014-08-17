@@ -1,7 +1,7 @@
 angular.module('sidebar')
     .directive('sidebarDirective', [function() {
         return {
-            restrict: 'E',
+            restrict: 'AE',
             templateUrl: 'app/public/sidebar/sidebar.html'
         }
 }]);

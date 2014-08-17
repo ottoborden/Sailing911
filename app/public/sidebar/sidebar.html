@@ -1,18 +1,10 @@
+<div class="container-fluid" ng-controller="sidebarController">
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <span class="panel-title">Regions</span>
+    <div class="row">
+        <div map-directive></div>
     </div>
-    <ul class="list-group">
-        <a class="list-group-item" ng-repeat="reg in regions" href="#">{{reg.region}}</a>
-    </ul>
-</div>
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <span class="panel-title">Categories</span>
-    </div>
-    <ul class="list-group">
-        <a class="list-group-item" ng-repeat="cat in categories" href="#">{{cat.category}}</a>
+    <ul class="nav nav-pills nav-stacked  sidebarScrollable">
+        <li><a class="list-group-item" ng-repeat="cat in categories" href="#/category/{{cat.id}}">{{cat.category}}</a></li>
     </ul>
 </div>

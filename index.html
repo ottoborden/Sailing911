@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="Sailing911">
+<head>
     <meta charset="UTF-8">
-    <title>New Layout Preview</title>
+    <title>Sailing 911</title>
 
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
@@ -10,35 +11,42 @@
     <link rel="stylesheet" href="app/public/css/sitewide.css">
 
     <style>
-        .categories {
-            background-color: red;
-        }
-        .content {
-            background-color: yellow;
+        .sidebarScrollable {
+            max-height: 500px;
+            overflow: auto;
         }
     </style>
 </head>
 <body>
 <div class="container-fluid">
-    <div class="col-sm-3 left">
-        <div class="row">
-            <div map-directive></div>
-        </div>
+    <div class="row">
+    <div class="col-md-2">
+
         <div class="row categories">
-            Categories
+            <div sidebar-directive></div>
         </div>
     </div>
 
-    <div class="col-sm-9 content">
+    <div class="col-md-9">
         <div class="row">
             <navbar-directive></navbar-directive>
         </div>
 
         <div class="row">
-            <div ng-view></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-8 panel">
+                <div ng-view></div>
+            </div>
+            <div class="col-md-2"></div>
         </div>
     </div>
+
+    </div>
+
+
 </div>
+
+
 
 <!-- framework scripts -->
 <script src="vendor/angular/angular.min.js"></script>
@@ -55,6 +63,7 @@
 <script src="app/app.js"></script>
 <script src="app/public/routes/routes.js"></script>
 <script src="app/restService.js"></script>
+<script src="app/services.js"></script>
 
 <!-- navbar -->
 <script src="app/public/navbar/navbarModule.js"></script>
@@ -95,6 +104,18 @@
 <script src="app/public/map/mapModule.js"></script>
 <script src="app/public/map/mapController.js"></script>
 <script src="app/public/map/mapDirective.js"></script>
+
+<!-- state -->
+<script src="app/public/state/stateModule.js"></script>
+<script src="app/public/state/stateController.js"></script>
+
+<!-- results -->
+<script src="app/public/results/resultsModule.js"></script>
+<script src="app/public/results/resultsDirective.js"></script>
+
+<!-- footer -->
+<script src="app/public/footer/footerModule.js"></script>
+<script src="app/public/footer/footerDirective.js"></script>
 
 </body>
 </html>

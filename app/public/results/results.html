@@ -1,0 +1,14 @@
+
+    <div class="row">
+        <div class="container-fluid">
+            <h2>{{companies.length}} Results</h2>
+            <table class="table table-striped table-hover">
+                <tr ng-repeat="comp in companies">
+                    <td>
+                        <h5><a href="#/company/{{comp.id}}">{{comp.company_name}}</a></h5>
+                        <small>{{comp.city}}, {{comp.state}}</small>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>

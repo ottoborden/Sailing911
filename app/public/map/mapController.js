@@ -3,8 +3,7 @@ angular.module('map')
         RestService.getMapData('vendor/jqvmap/jqvmap/data/jquery.vmap.sampledata.js').then(function(res) {
             if(res.statusText !== 'OK') {
                 console.log('Failed to get map data');
-            }
-            else {
+            } else {
                 $scope.mapData = res.data;
             }
         });

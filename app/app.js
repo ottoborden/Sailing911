@@ -8,6 +8,9 @@ angular.module('Sailing911', [
     'region',
     'company',
     'map',
+    'state',
+    'results',
+    'footer',
     'browse'
 ]);
 

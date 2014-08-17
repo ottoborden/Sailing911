@@ -24,6 +24,9 @@ angular.module('Sailing911').config(['$routeProvider', '$locationProvider', func
             templateUrl: 'app/public/story/story.html'
             //controller: 'storyController'
         })
+        .when('/state/:stateAbbrev', {
+            templateUrl: 'app/public/state/state.html'
+        })
         /*.when('/map', {
             templateUrl: 'app/public/map/map.html',
             controller: 'mapController'

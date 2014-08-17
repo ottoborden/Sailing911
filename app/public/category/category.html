@@ -1,8 +1,16 @@
-<div category-directive>
-    <h1>Companies <small>in category <span class="text-uppercase text-info">{{categoryName}}</span></small></h1>
-    <table class="table table-bordered table-hover table-striped">
-        <tr ng-repeat="company in categoryCompanies | orderBy: 'company_name'">
-            <td><a href='#/company/{{company.id}}'>{{company.company_name}}</a></td>
-        </tr>
-    </table>
+<div class="container-fluid">
+    <div category-directive>
+        <div class="row">
+            <h1>Companies <small>in category <span class="text-uppercase text-info">{{categoryName}}</span></small></h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div results-directive></div>
+            </div>
+
+            <div class="col-md-6">
+                Ads...
+            </div>
+        </div>
+    </div>
 </div>
