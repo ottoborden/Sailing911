@@ -15,7 +15,7 @@ angular.module('Sailing911')
             return $http.get(path);
         }
 
-        RestService.getBrowseQueries = function(queries) {
+        RestService.multipleQueries = function(queries) {
             var qs = [];
             _.forEach(queries, function(item) {
                 qs.push($http.post(RestService.postUrl, item));

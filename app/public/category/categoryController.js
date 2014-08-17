@@ -2,7 +2,7 @@ angular.module('category')
     .controller('categoryController', ['$scope', '$http', 's911Services', 'RestService', '$routeParams',
         function($scope, $http, s911Services, RestService, $routeParams) { 'use strict';
             $scope.categoryId = $routeParams.categoryId;
-            var query = {'q': 'SELECT tC.id, tC.company_name FROM tblCompanies tC INNER JOIN tblCategoriesCompanies ON ' +
+            var query = {'q': 'SELECT tC.id, tC.company_name, tC.state, tC.city FROM tblCompanies tC INNER JOIN tblCategoriesCompanies ON ' +
                         'tblCategoriesCompanies.company_id = tC.id WHERE tblCategoriesCompanies.category_id = ' +
                         $scope.categoryId};
             RestService.fetch(query).then(function(res) {

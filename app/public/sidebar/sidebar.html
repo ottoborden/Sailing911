@@ -5,6 +5,7 @@
     </div>
 
     <ul class="nav nav-pills nav-stacked  sidebarScrollable">
-        <li><a class="list-group-item" ng-repeat="cat in categories" href="#/category/{{cat.id}}">{{cat.category}}</a></li>
+        <li><a class="list-group-item" href="" ng-click="clearCategory(null)">None</a></li>
+        <li><a class="list-group-item" ng-repeat="cat in categories" href="#/category/{{cat.id}}" ng-click="setCategoryId(cat)">{{cat.category}}</a></li>
     </ul>
 </div>

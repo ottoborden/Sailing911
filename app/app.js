@@ -5,13 +5,10 @@ angular.module('Sailing911', [
     'sidebar',
     'home',
     'category',
-    'region',
     'company',
     'map',
     'state',
-    'results',
-    'footer',
-    'browse'
+    'results'
 ]);
 
 angular.module('lodash', []).factory('lodashService', [function() {

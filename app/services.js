@@ -6,11 +6,13 @@ angular.module('Sailing911')
             var query = {'q': 'SELECT category FROM tblCategories WHERE id = \'' + catId + '\''};
             return RestService.fetch(query);
         };
+        s911Services.setCurrCategoryId = function(catId) {
+            s911Services.currCategoryId = catId;
+        };
 
-        s911Services.currStateName = '';
-        s911Services.surrStateAbbrev = '';
-        s911Services.currCategoryId = '';
-        //s911Services.currCategory = s911Services.getCategoryName(catId);
+        s911Services.currStateName = null;
+        s911Services.currStateAbbrev = null;
+        s911Services.currCategoryId = null;
 
         return s911Services;
     }]);

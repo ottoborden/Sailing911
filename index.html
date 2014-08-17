@@ -20,30 +20,27 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-    <div class="col-md-2">
+        <div class="col-md-2">
 
-        <div class="row categories">
-            <div sidebar-directive></div>
-        </div>
-    </div>
-
-    <div class="col-md-9">
-        <div class="row">
-            <navbar-directive></navbar-directive>
-        </div>
-
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-8 panel">
-                <div ng-view></div>
+            <div class="row categories">
+                <div sidebar-directive></div>
             </div>
-            <div class="col-md-2"></div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="row">
+                <navbar-directive></navbar-directive>
+            </div>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-8 panel">
+                    <div ng-view></div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
         </div>
     </div>
-
-    </div>
-
-
 </div>
 
 
@@ -70,11 +67,6 @@
 <script src="app/public/navbar/navbarController.js"></script>
 <script src="app/public/navbar/navbarDirective.js"></script>
 
-<!-- browse -->
-<script src="app/public/browse/browseModule.js"></script>
-<script src="app/public/browse/browseController.js"></script>
-<script src="app/public/browse/browseDirective.js"></script>
-
 <!-- sidebar -->
 <script src="app/public/sidebar/sidebarModule.js"></script>
 <script src="app/public/sidebar/sidebarController.js"></script>
@@ -84,11 +76,6 @@
 <script src="app/public/category/categoryModule.js"></script>
 <script src="app/public/category/categoryController.js"></script>
 <script src="app/public/category/categoryDirective.js"></script>
-
-<!-- region -->
-<script src="app/public/region/regionModule.js"></script>
-<script src="app/public/region/regionController.js"></script>
-<script src="app/public/region/regionDirective.js"></script>
 
 <!-- company -->
 <script src="app/public/company/companyModule.js"></script>
@@ -111,11 +98,8 @@
 
 <!-- results -->
 <script src="app/public/results/resultsModule.js"></script>
+<script src="app/public/results/resultsController.js"></script>
 <script src="app/public/results/resultsDirective.js"></script>
-
-<!-- footer -->
-<script src="app/public/footer/footerModule.js"></script>
-<script src="app/public/footer/footerDirective.js"></script>
 
 </body>
 </html>
