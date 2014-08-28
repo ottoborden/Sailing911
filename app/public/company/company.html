@@ -9,6 +9,9 @@
     </div>
 
     <div class="row">
+        <div ng-if="company.logo_fname" class="row">
+            <img class="img-responsive" ng-src="images/logos/{{company.logo_fname}}">
+        </div>
         <div class="col-md-6">
             <table class="table table-bordered table-striped">
                 <tr>

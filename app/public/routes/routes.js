@@ -8,10 +8,10 @@ angular.module('Sailing911').config(['$routeProvider', '$locationProvider', func
             templateUrl: 'app/public/browse/browse.html',
             controller: 'browseController'
         })
-        .when('/category/:categoryId', {
+        /*.when('/category/:categoryId', {
             templateUrl: 'app/public/category/category.html',
             controller: 'categoryController'
-        })
+        })*/
         .when('/company/:companyId', {
             templateUrl: 'app/public/company/company.html',
             controller: 'companyController'
@@ -24,11 +24,16 @@ angular.module('Sailing911').config(['$routeProvider', '$locationProvider', func
             templateUrl: 'app/public/story/story.html'
             //controller: 'storyController'
         })
-        .when('/state/:stateAbbrev', {
+        /*.when('/state/:stateAbbrev', {
             templateUrl: 'app/public/state/state.html'
+        })*/
+        .when('/category/:categoryId', {
+            templateUrl: 'app/public/results/results.html',
+            controller: 'resultsController'
         })
-        .when('/results', {
-            templateUrl: 'app/public/results/results.html'
+        .when('/state/:stateAbbrev', {
+            templateUrl: 'app/public/results/results.html',
+            controller: 'resultsController'
         })
         /*.when('/map', {
             templateUrl: 'app/public/map/map.html',

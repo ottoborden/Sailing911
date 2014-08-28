@@ -11,9 +11,22 @@ angular.module('Sailing911')
             return $http.post(RestService.postUrl, query);
         };
 
+        RestService.getCompaniesByCategoryId = function(categoryId) {
+            return RestService.fetch({
+                'q': 'SELECT tC.id, tC.company_name, tC.state, tC.city FROM tblCompanies tC INNER JOIN tblCategoriesCompanies ON ' +
+                    'tblCategoriesCompanies.company_id = tC.id WHERE tblCategoriesCompanies.category_id = ' +
+                    categoryId });
+        };
+
+        RestService.getCompaniesByState = function(stateAbbrev) {
+            return RestService.fetch({
+                'q': 'SELECT * FROM tblCompanies WHERE state = \'' + stateAbbrev + '\''
+            });
+        };
+
         RestService.getMapData = function(path) {
             return $http.get(path);
-        }
+        };
 
         RestService.multipleQueries = function(queries) {
             var qs = [];

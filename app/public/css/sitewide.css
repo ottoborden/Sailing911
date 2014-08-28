@@ -7,3 +7,7 @@ body {
     height: 400px;
     border: 1px solid black;
 }
+
+.img-responsive {
+    margin: 0 auto;
+}
