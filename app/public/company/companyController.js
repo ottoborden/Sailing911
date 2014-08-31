@@ -6,7 +6,7 @@ angular.module('company')
             var query = {'q': 'SELECT * FROM tblCompanies WHERE id = ' + $scope.companyId};
             RestService.fetch(query).then(function(res) {
                 $scope.company = res.data[0];
-                console.log($scope.company);
+
                 if(!$scope.company.company_url) {
                     $scope.company.noUrl = true;
                 }

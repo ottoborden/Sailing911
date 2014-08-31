@@ -5,17 +5,6 @@ angular.module('results')
             $scope.both = false;
             $scope.showing = null;
 
-            $scope.$watch(s911Services.currCategoryId, function(newVal, oldVal) {
-                $scope.updateResults(newVal);
-            });
-            $scope.$watch(s911Services.currStateAbbrev, function(newVal, oldVal) {
-                $scope.updateResults(newVal);
-            });
-
-            $scope.updateResults = function(newVal) {
-                console.log(newVal);
-            };
-
             if(s911Services.currCategoryId !== null && s911Services.currStateAbbrev !== null) {
                 $scope.both = true;
 

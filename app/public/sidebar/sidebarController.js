@@ -12,10 +12,20 @@ angular.module('sidebar')
                 if(cat === null) {
                     cat = {};
                     cat.id = null;
+                    s911Services.updateCurrState([
+                        { key: 'currCategoryId', val: cat.id }
+                    ]);
+                    // Reload results page with all results in state or display page telling them to select something
+                    if(s911Services.currStateAbbrev != null) {
+                        window.location.href = '#/state/' + s911Services.currStateAbbrev;
+                    } else {
+                        window.location.href = '#/';
+                    }
+                } else {
+                    s911Services.updateCurrState([
+                        { key: 'currCategoryId', val: cat.id }
+                    ]);
                 }
-                s911Services.updateCurrState([
-                    { key: 'currCategoryId', val: cat.id }
-                ]);
             };
 
             $scope.setActiveCategory = function(catObj) {
