@@ -8,7 +8,8 @@ angular.module('Sailing911', [
     'company',
     'map',
     'state',
-    'results'
+    'results',
+    'contact'
 ]);
 
 angular.module('lodash', []).factory('lodashService', [function() {

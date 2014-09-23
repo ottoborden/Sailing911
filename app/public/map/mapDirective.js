@@ -12,9 +12,11 @@ angular.module('map').directive('mapDirective', ['s911Services', 'RestService', 
                 scaleColors: ['#C8EEFF', '#006491'],
                 normalizeFunction: 'polynomial',
                 onRegionClick: function(element, abbrev, state) {
-                    s911Services.currStateAbbrev = abbrev;
-                    s911Services.currStateName = state;
-                    window.location.href = RestService.activeUrl + '/state/' + encodeURIComponent(abbrev);
+                    scope.$emit('stateChange', {
+                        abbrev: abbrev,
+                        state: state
+                    });
+                    window.location.href = RestService.activeUrl + '/results/' + encodeURIComponent(abbrev);
                 }
             });
         });

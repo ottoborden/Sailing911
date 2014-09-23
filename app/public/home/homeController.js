@@ -1,4 +1,5 @@
 angular.module('home')
-    .controller('homeController', ['$scope', '$http', 'lodashService', function($scope, $http, lodashService) { 'use strict';
-
+    .controller('homeController',
+    ['$scope', 'RestService', function($scope, RestService) { 'use strict';
+        $scope.wpUrl = RestService.wpUrl;
 }]);

@@ -1,58 +1,45 @@
 angular.module('results')
     .controller('resultsController', ['$scope', '$routeParams', 's911Services', 'RestService', 'lodashService',
-        function($scope, $routeParams, s911Services, RestService, lodashServices) {
+        function($scope, $routeParams, s911Services, RestService, lodashService) {
             $scope.companies = [];
             $scope.both = false;
             $scope.showing = null;
+            $scope.resultsHeader = '<em>header</em>';
 
-            if(s911Services.currCategoryId !== null && s911Services.currStateAbbrev !== null) {
-                $scope.both = true;
+            $scope.$on('categoryChanged', function(evt, data) {
+                console.log('categoryChanged caught');
+                updateResults(evt, data);
+            });
+            $scope.$on('stateChanged', function(evt, data) {
+                console.log('stateChanged caught');
+                updateResults(evt, data);
+            });
 
-                $scope.currStateName = s911Services.currStateName;
-                s911Services.getCategoryName(s911Services.currCategoryId).then(function(res) {
-                    s911Services.updateCurrState([
-                        {key: 'currCategoryName', val: res.data[0].category}
-                    ]);
-                    $scope.currCategoryName = res.data[0].category;
-                });
-                var q = [{'q': 'SELECT id "ID" FROM tblCompanies WHERE state = \'' + s911Services.currStateAbbrev + '\''},
-                    {'q': 'SELECT company_id "ID" FROM tblCategoriesCompanies WHERE category_id = \'' + s911Services.currCategoryId + '\''}
-                ];
-                RestService.multipleQueries(q).then(function(res) {
-                    var p, t;
-                    p = _.pluck(res[0].data, 'ID');
-                    t = _.pluck(res[1].data, 'ID');
-                    var comps = _.intersection(p, t);
-
-                    $scope.companies.length = 0;
-                    _.forEach(comps, function(item) {
-                        q = {'q': 'SELECT id, company_name, city, state FROM tblCompanies WHERE id = \'' + item + '\''};
-                        RestService.fetch(q).then(function(res) {
-                            $scope.companies.push(res.data[0]);
+            function updateResults(evt, data) {
+                console.log('update');
+                if(s911Services.currCategoryId && s911Services.currStateAbbrev) {
+                    $scope.both = true;
+                } else if(s911Services.currCategoryId && !s911Services.currStateAbbrev) {
+                    console.log('category only');
+                    var q = {'q': 'SELECT tC.id, tC.company_name, tC.city, tC.state ' +
+                        'FROM tblCompanies tC ' +
+                        'JOIN tblCategoriesCompanies tCC ON tCC.company_id = tC.id ' +
+                        'WHERE tCC.category_id = \'' + s911Services.currCategoryId + '\''};
+                    RestService.fetch(q).then(function(res) {
+                        _.forEach(res.data, function(item) {
+                            $scope.companies.push(item);
                         });
                     });
-                });
-            } else {
-                $scope.both = false;
-                if(s911Services.currCategoryId) {
-                    $scope.showing = 'category';
-                    s911Services.getCategoryName(s911Services.currCategoryId).then(function(res) {
-                        s911Services.updateCurrState([
-                            {key: 'currCategoryName', val: res.data[0].category}
-                        ]);
-                        $scope.currCategoryName = res.data[0].category;
-                    });
-                    RestService.getCompaniesByCategoryId(s911Services.currCategoryId).then(function(res) {
-                        $scope.companies = res.data;
-                    });
-                } else if(s911Services.currStateAbbrev) {
-                    $scope.showing = 'state';
-                    $scope.stateName = s911Services.currStateName;
-                    RestService.getCompaniesByState(s911Services.currStateAbbrev).then(function(res) {
-                        $scope.companies = res.data;
+                } else if(!s911Services.currCategoryId && s911Services.currStateAbbrev) {
+                    console.log('state only');
+                    var q = {'q': 'SELECT id, company_name, city, state FROM tblCompanies WHERE state = \'' + s911Services.currStateAbbrev + '\''};
+                    RestService.fetch(q).then(function(res) {
+                        _.forEach(res.data, function(item) {
+                            $scope.companies.push(item);
+                        });
                     });
                 } else {
-
+                    // Nothing selected
                 }
-            }
+            };
     }]);

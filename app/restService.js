@@ -4,6 +4,7 @@ angular.module('Sailing911')
 
         RestService.activeUrl = 'http://localhost/Sailing911/index.html#';
         //RestService.activeUrl = 'http://test.sailing911.com/test/index.html#';
+        RestService.wpUrl = 'http://test.sailing911.com/wp';
 
         RestService.postUrl = 'app/private/REST/POST.php';
 
