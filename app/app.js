@@ -4,10 +4,8 @@ angular.module('Sailing911', [
     'navbar',
     'sidebar',
     'home',
-    'category',
     'company',
     'map',
-    'state',
     'results',
     'contact'
 ]);

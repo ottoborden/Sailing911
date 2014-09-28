@@ -1,8 +1,0 @@
-<div region-directive>
-    <h1>Companies <small>in region <span class="text-uppercase text-info">{{region.region}}</span></small></h1>
-    <table class="table table-bordered table-hover table-striped">
-        <tr ng-repeat="company in companies | orderBy: 'company_name'">
-            <td><a href='#/company/{{company.id}}'>{{company.company_name}}</a></td>
-        </tr>
-    </table>
-</div>
