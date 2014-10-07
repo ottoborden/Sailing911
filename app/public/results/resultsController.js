@@ -66,12 +66,10 @@ angular.module('results')
                         "WHEN description LIKE '%" + $scope.searchTerm + "' THEN 2 " +
                         "ELSE 3 " +
                         "END, description"};
-                    console.log(q);
                     RestService.fetch(q).then(function(res) {
                         _.forEach(res.data, function(item) {
                             $scope.companies.push(item);
                         });
-                        console.log($scope.companies);
                     });
                 } else {
 

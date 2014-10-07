@@ -24,6 +24,10 @@ angular.module('Sailing911').config(['$routeProvider', '$locationProvider', func
             templateUrl: 'app/public/results/results.html',
             controller: 'resultsController'
         })
+        .when('/results/', {
+            templateUrl: 'app/public/results/results.html',
+            controller: 'resultsController'
+        })
         .when('/contact', {
             templateUrl: 'app/public/contact/contact.html',
             controller: 'ContactController'
