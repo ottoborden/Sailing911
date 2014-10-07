@@ -6,6 +6,7 @@ angular.module('Sailing911', [
     'home',
     'company',
     'map',
+    'search',
     'results',
     'contact'
 ]);

@@ -20,7 +20,7 @@ angular.module('Sailing911').config(['$routeProvider', '$locationProvider', func
             templateUrl: 'app/public/results/results.html',
             controller: 'resultsController'
         })
-        .when('/results/', {
+        .when('/results/:searchTerm', {
             templateUrl: 'app/public/results/results.html',
             controller: 'resultsController'
         })

@@ -1,10 +1,10 @@
 <div class="container-fluid">
     <div class="row">
         <div ng-if="company.noUrl === true">
-            <h1>{{company.company_name}} <small>{{company.city}}, {{company.state}}</small></h1>
+            <h1>{{company.company_name}} <br /><small>{{company.city}}, {{company.state}}</small></h1>
         </div>
         <div ng-if="!company.noUrl">
-            <h1><a href="{{company.company_url}}" target="_blank">{{company.company_name}}</a> <small>{{company.city}}, {{company.state}}</small></h1>
+            <h1><a href="{{company.company_url}}" target="_blank">{{company.company_name}}</a> <br /><small>{{company.city}}, {{company.state}}</small></h1>
         </div>
     </div>
 
