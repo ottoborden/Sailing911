@@ -7,7 +7,8 @@ angular.module('results')
             $scope.currCategory = '';
             $scope.currStateName = s911Services.currStateName;
             var q = '';
-            $scope.searchTerm = 'Search for';
+            $scope.searchTerm = s911Services.searchTerm;
+            $scope.search = s911Services.search;
 
             $scope.$on('categoryChanged', function(evt, data) {
                 //console.log('categoryChanged caught');
